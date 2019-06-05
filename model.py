@@ -66,22 +66,3 @@ class DecoderRNN(nn.Module):
             
         return predicted_sentence
         
-        '''
-        ret = []
-        for i in range(max_len):
-            print(i)
-            hiddens, _ = self.lstm(inputs)
-            print(hiddens.shape)
-            hiddens = hiddens.squeeze(1)
-            print(hiddens.shape)
-            outputs = self.linear(hiddens)
-            print(outputs.shape)
-            value, indice = outputs.max(1)
-            print(indice)
-            ret.append(indice.item())
-            inputs = self.embed(indice).unsqueeze(1)
-            print('embedded', inputs.shape)
-        return ret
-        
-        '''
-        

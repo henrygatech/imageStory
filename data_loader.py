@@ -21,21 +21,6 @@ def get_loader(transform,
                vocab_from_file=True,
                num_workers=0,
                cocoapi_loc='/opt'):
-    """Returns the data loader.
-    Args:
-      transform: Image transform.
-      mode: One of 'train' or 'test'.
-      batch_size: Batch size (if in testing mode, must have batch_size=1).
-      vocab_threshold: Minimum word count threshold.
-      vocab_file: File containing the vocabulary. 
-      start_word: Special word denoting sentence start.
-      end_word: Special word denoting sentence end.
-      unk_word: Special word denoting unknown words.
-      vocab_from_file: If False, create vocab from scratch & override any existing vocab_file.
-                       If True, load vocab from from existing vocab_file, if it exists.
-      num_workers: Number of subprocesses to use for data loading 
-      cocoapi_loc: The location of the folder containing the COCO API: https://github.com/cocodataset/cocoapi
-    """
     
     assert mode in ['train', 'test'], "mode must be one of 'train' or 'test'."
     if vocab_from_file==False: assert mode=='train', "To generate vocab from captions file, must be in training mode (mode='train')."

@@ -14,17 +14,7 @@ class Vocabulary(object):
         unk_word="<unk>",
         annotations_file='/home/henry/data/annotations/captions_train2014.json',
         vocab_from_file=False):
-        """Initialize the vocabulary.
-        Args:
-          vocab_threshold: Minimum word count threshold.
-          vocab_file: File containing the vocabulary.
-          start_word: Special word denoting sentence start.
-          end_word: Special word denoting sentence end.
-          unk_word: Special word denoting unknown words.
-          annotations_file: Path for train annotation file.
-          vocab_from_file: If False, create vocab from scratch & override any existing vocab_file
-                           If True, load vocab from from existing vocab_file, if it exists
-        """
+        
         self.vocab_threshold = vocab_threshold
         self.vocab_file = vocab_file
         self.start_word = start_word
